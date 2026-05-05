@@ -1,0 +1,323 @@
+/* =========================
+   DESIGN VARIABLES
+========================= */
+:root {
+    --bg: #f5f3ef;
+    --surface: #ffffff;
+
+    --accent: #3b5c4c;
+    --accent-soft: #d9e2da;
+    --highlight: #c47c5a;
+
+    --text-main: #222222;
+    --text-muted: #555555;
+
+    --font-heading: "Playfair Display", serif;
+    --font-body: "Nunito", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+    --max-width: 960px;
+}
+
+/* =========================
+   RESET
+========================= */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* =========================
+   BASE
+========================= */
+body {
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-main);
+    background-color: var(--bg);
+}
+
+/* =========================
+   LAYOUT
+========================= */
+main {
+    max-width: var(--max-width);
+    margin: -2rem auto 0;
+    padding: 2.5rem 1.5rem 3rem;
+    background-color: var(--surface);
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
+}
+
+section {
+    padding: 2.5rem 0;
+    border-bottom: 1px solid #ece7df;
+}
+
+section:last-of-type {
+    border-bottom: none;
+}
+
+/* =========================
+   TYPOGRAPHY
+========================= */
+h1,
+h2 {
+    font-family: var(--font-heading);
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+}
+
+h1 {
+    font-size: 2.4rem;
+}
+
+h2 {
+    font-size: 1.75rem;
+}
+
+h3 {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--text-muted);
+    margin: 1.25rem 0 0.5rem;
+}
+
+p {
+    margin-bottom: 1rem;
+    max-width: 65ch;
+}
+
+/* =========================
+   HEADER & NAV
+========================= */
+header {
+    background-color: var(--accent);
+    border-bottom: 6px solid var(--highlight);
+}
+
+nav {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 2rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo {
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 2.1rem;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+nav a:hover {
+    opacity: 0.85;
+}
+
+/* =========================
+   HERO
+========================= */
+.hero {
+    text-align: center;
+    padding-top: 1.5rem;
+}
+
+.hero img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 14px;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+    margin-bottom: 2rem;
+}
+
+.hero p {
+    color: var(--text-muted);
+    margin-bottom: 1.75rem;
+}
+
+.hero a {
+    display: inline-block;
+    padding: 0.75rem 1.75rem;
+    background-color: var(--highlight);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.hero a:hover {
+    opacity: 0.9;
+}
+
+/* =========================
+   SKILLS
+========================= */
+.skill-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+}
+
+.skill-grid div {
+    background-color: var(--accent-soft);
+    padding: 1.25rem;
+    border-radius: 14px;
+    text-align: center;
+    font-weight: 600;
+    color: var(--accent);
+}
+
+/* =========================
+   PROJECTS
+========================= */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.project-grid article {
+    background-color: #faf7f2;
+    border-radius: 18px;
+    padding: 1.5rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-grid article:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
+}
+
+.project-grid img {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+}
+
+.project-grid a {
+    text-decoration: none;
+    color: var(--highlight);
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+/* =========================
+   CASE STUDIES
+========================= */
+.case-header p {
+    font-style: italic;
+    color: var(--text-muted);
+}
+
+.case-summary,
+.case-challenge,
+.case-role,
+.case-solution,
+.case-results,
+.case-reflection {
+    margin-bottom: 3rem;
+}
+
+.case-solution img {
+    width: 100%;
+    border-radius: 14px;
+}
+
+/* =========================
+   CONTACT FORM
+========================= */
+.contact-form form {
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+label {
+    font-weight: 600;
+}
+
+input,
+textarea {
+    font-family: var(--font-body);
+    padding: 0.7rem;
+    border-radius: 8px;
+    border: 1px solid #d8d2c8;
+}
+
+button {
+    padding: 0.75rem;
+    background-color: var(--highlight);
+    border: none;
+    color: #ffffff;
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-radius: 999px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+    background-color: #f0ebe4;
+    border-top: 2px solid #e0d7c9;
+    text-align: center;
+    padding: 1.5rem;
+}
+
+footer p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+    }
+
+    .skill-grid,
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+}
